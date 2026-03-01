@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycaretaker"
+version = "0.1.0"
+description = "A smart Python package manager companion — manage, monitor, visualize, and analyze your environment with optional AI insights."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+keywords = ["package-manager", "pip", "dependency", "visualization", "ai", "monitoring"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: System :: Systems Administration",
+]
+dependencies = [
+    "psutil>=5.9",
+    "matplotlib>=3.7",
+    "networkx>=3.0",
+    "packaging>=23.0",
+    "colorama>=0.4",
+]
+
+[project.optional-dependencies]
+ai = ["openai>=1.0"]
+audit = ["pip-audit>=2.6"]
+dev = ["pytest>=8.0"]
+all = ["openai>=1.0", "pip-audit>=2.6", "pytest>=8.0"]
+
+[project.scripts]
+caretaker = "pycaretaker.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/kshit/pycaretaker"
+Issues = "https://github.com/kshit/pycaretaker/issues"
+
+[tool.setuptools.packages.find]
+include = ["pycaretaker*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

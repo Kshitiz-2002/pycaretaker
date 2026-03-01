@@ -1,0 +1,4 @@
+dist
+.venv
+pycaretaker.egg-info
+upload.bat
