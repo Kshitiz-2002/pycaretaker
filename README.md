@@ -122,7 +122,7 @@ python -m pytest tests/test_core.py -v
 
 MIT License
 
-Copyright (c) [year] [Full name or organization]
+Copyright (c) 2026 Kshitiz Pandey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
